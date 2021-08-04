@@ -11,7 +11,7 @@
   xml:lang="en">
  <title>Registering your product after installation</title>
 
- <sect1>
+ <section>
   <title>Introduction</title>
   <para> You will learn how to register your base product (and additional modules and extensions)
    after the installation. The registration process can be done either with &yast; or from the
