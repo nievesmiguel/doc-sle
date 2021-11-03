@@ -63,10 +63,8 @@
    </listitem>
    <listitem>
     <para>
-     Containers are not secure, and the overall security depends on the host
-     system. Containerized applications can be secured through &aa; or &selnx;
-     profiles. Securing containers is harder than securing virtual machines,
-     due to the larger attack surface.
+     Containers security depends on the host system. Containerized applications
+     can be secured through &selnx; profiles.
     </para>
    </listitem>
   </itemizedlist>
@@ -121,13 +119,25 @@
     monitoring program watches the container's process and if the container
     dies, the monitoring program saves its exit code. The program also holds
     open the tty interface for the particular container. The monitoring program
-    enables you to run containers in the detached mode when Podman exits, because
-    this program continues to run and enables you to attach tty later.
+    enables you to run containers in the detached mode when Podman exits,
+    because this program continues to run and enables you to attach tty later.
    </para>
   </section>
  </section>
  <section xml:id="sec-podman-delivery">
   <title>Getting Podman</title>
+  <important>
+   <title>Stop <literal>firewalld</literal> when using Podman</title>
+   <para>
+    If you enabled and started the firewall, stop the
+    <literal>firewalld</literal> service by running:
+   </para>
+<screen>&prompt.root;systemctl stop firewalld.service</screen>
+   <para>
+    Otherwise the <literal>firewalld</literal> service can cause issues when
+    running along with Podman.
+   </para>
+  </important>
   <para>
    In case of &slema;, Podman is delivered in all raw images or is installed by
    default if you installed your system manually from ISO. To verify that
@@ -137,11 +147,10 @@
   <para>
    If Podman is not listed in the output, install it by running:
   </para>
-<screen>&prompt.root;transactional-update pkg install podman*</screen>
+<screen>&prompt.root;transactional-update pkg install -t pattern  microos-container_runtime</screen>
   <para>
    In the Cockpit web interface, you need to start Podman as a service by
-   clicking <guimenu>Start podman</guimenu> to access container
-   management.
+   clicking <guimenu>Start podman</guimenu> to access container management.
   </para>
   <para>
    By default, Podman requires root privileges. To enable rootless mode for the
@@ -184,8 +193,8 @@
    </para>
   </important>
   <para>
-   The <command>podman pull</command> command pulls an image from an image registry.
-   The syntax is as follows:
+   The <command>podman pull</command> command pulls an image from an image
+   registry. The syntax is as follows:
   </para>
 <screen>&prompt.root;podman pull <replaceable>[OPTIONS]</replaceable> <replaceable>SOURCE</replaceable></screen>
   <para>
@@ -204,8 +213,8 @@
   <note>
    <title>Getting images using Cockpit</title>
    <para>
-    If you are using Cockpit, you can also pull images from an image registry in
-    the <guimenu>Podman containers</guimenu> menu by clicking <guimenu>+ Get
+    If you are using Cockpit, you can also pull images from an image registry
+    in the <guimenu>Podman containers</guimenu> menu by clicking <guimenu>+ Get
     new image</guimenu>.
    </para>
   </note>
@@ -469,8 +478,8 @@
    </para>
 <screen>&prompt.root;podman pod create <replaceable>[OPTIONS]</replaceable></screen>
    <para>
-    The command outputs the pod ID. By default, the pods are created without being
-    started. You can start a pod by running a container in the pod, or by
+    The command outputs the pod ID. By default, the pods are created without
+    being started. You can start a pod by running a container in the pod, or by
     starting the pod as described in <xref linkend="sec-starting-pods"/>.
    </para>
    <note>
@@ -545,8 +554,8 @@ POD ID        NAME               STATUS   CREATED       # OF CONTAINERS  INFRA I
     <title>Only new containers can be added to a pod</title>
     <para>
      The <command>podman start</command> command does not allow for starting a
-     container in a pod if the container was not added to the pod during
-     the container's initial running.
+     container in a pod if the container was not added to the pod during the
+     container's initial running.
     </para>
    </note>
    <para>
