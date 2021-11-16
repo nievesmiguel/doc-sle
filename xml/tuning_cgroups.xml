@@ -19,6 +19,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          version="5.0" xml:id="cha-tuning-cgroups">
 
+  <!-- test, ignore -->  
  <title>Kernel control groups</title>
  <info>
   <abstract>
