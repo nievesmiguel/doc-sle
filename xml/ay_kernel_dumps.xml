@@ -166,36 +166,24 @@
     &lt;listentry&gt;256M,high&lt;/listentry&gt;
   &lt;/crash_kernel&gt;
 &lt;/kdump&gt; </screen>
-  </example>
-  <para>
-   The following table shows the settings necessary to reserve memory:
-  </para>
-  <variablelist>
-   <title>Kdump memory reservation settings:XML representation</title>
-   <varlistentry>
-    <term><literal>add_crash_kernel</literal></term>
-    <listitem>
-     <para>
-      Set to <literal>true</literal> if memory should be reserved and Kdump
-      enabled.
-     </para>
-<screen>&lt;add_crash_kernel config:type="boolean"&gt;true&lt;/add_crash_kernel&gt;</screen>
-     <para>
-      required
-     </para>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term><literal>crash_kernel</literal></term>
-    <listitem>
-     <para>
-      Use the syntax of the crashkernel command line as discussed above.
-     </para>
-<screen>&lt;crash_kernel&gt;256M:64M&lt;/crash_kernel&gt;</screen>
-     <para>
-      A list of values is also supported.
-     </para>
-<screen>&lt;crash_kernel config:type="list"&gt;
+   </example>
+    <para>
+     The following list shows the settings necessary to reserve memory:
+    </para>
+<variablelist>
+  <title>Kdump memory reservation settings:XML representation</title>
+  <varlistentry><term><literal>add_crash_kernel</literal></term>
+<listitem><para>
+          Set to <literal>true</literal> if memory should be reserved and
+          Kdump enabled.
+         </para><screen>&lt;add_crash_kernel config:type="boolean"&gt;true&lt;/add_crash_kernel&gt;</screen><para>
+          required
+         </para></listitem>
+</varlistentry>
+  <varlistentry><term><literal>crash_kernel</literal></term>
+<listitem><para>
+          Use the syntax of the crashkernel command line as discussed above.
+         </para><screen>&lt;crash_kernel&gt;256M:64M&lt;/crash_kernel&gt;</screen><para>A list of values is also supported.</para><screen>&lt;crash_kernel config:type="list"&gt;
   &lt;listentry&gt;72M,low&lt;/listentry&gt;
   &lt;listentry&gt;256M,high&lt;/listentry&gt;
 &lt;/crash_kernel&gt;</screen>
