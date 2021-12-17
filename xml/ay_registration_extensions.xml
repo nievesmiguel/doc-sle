@@ -18,15 +18,6 @@
  </info>
 
  <para>
-<<<<<<< HEAD
-  Registering the system with the registration server can be configured within
-  the <literal>suse_register</literal> resource. The following example
-  registers the system with the &scc;. In case your organization provides its
-  own registration server, you need to specify the required data with the
-  <literal>reg_server*</literal> properties. Refer to the table below for
-  details.
- </para>
-=======
     Registering the system with the registration server can be configured
     within the <literal>suse_register</literal> resource. The following example
     registers the system with the &scc;. In case your organization provides its
@@ -34,7 +25,6 @@
     <literal>reg_server*</literal> properties. Refer to the 
     <literal>suse_register values</literal>list below for details.
    </para>
->>>>>>> b809dbef4 (Replace 'table' with 'list', where tables have been converted to lists)
 
 <screen>&lt;suse_register&gt;
   &lt;do_registration config:type="boolean"&gt;true&lt;/do_registration&gt;
@@ -83,17 +73,6 @@
   &lt;setup_before_proposal config:type="boolean"&gt;true&lt;/setup_before_proposal&gt;
 &lt;/networking&gt;</screen>
  </tip>
-
-<<<<<<< HEAD
- <variablelist>
-  <title><literal>suse_register Values</literal></title>
-  <varlistentry>
-   <term>do_registration</term>
-   <listitem>
-    <para>
-     Boolean
-    </para>
-=======
    <variablelist>
     <title><literal>suse_register values</literal></title>
 
@@ -103,7 +82,6 @@
        <para>
         Boolean
        </para>
->>>>>>> b809dbef4 (Replace 'table' with 'list', where tables have been converted to lists)
 <screen>&lt;do_registration config:type="boolean"&gt;true&lt;/do_registration&gt;</screen>
     <para>
      Specify whether the system should be registered or not. If set to
